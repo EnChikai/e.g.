@@ -1,6 +1,6 @@
 package blogex;
 
-public class Ex0725 {
+public class Ex0725_Integer {
 
 	public static void main(String[] args) {
 
