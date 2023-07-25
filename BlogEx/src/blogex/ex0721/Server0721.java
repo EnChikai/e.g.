@@ -41,12 +41,12 @@ public class Server0721 {
 			server = new ServerSocket(port);
 			
 			System.out.println("- - - 서버 오픈 - - -");
-			
+			while(true) {
 			//서버 오픈
 			serSo = server.accept();
 			
 			System.out.println("클라이언트가 접속하였습니다.");
-			
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
