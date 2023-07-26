@@ -1,6 +1,6 @@
 package blogex;
 
-public class Ex0726_variables {
+public class Ex0726_Operator {
 
 	public static void main(String[] args) {
 
