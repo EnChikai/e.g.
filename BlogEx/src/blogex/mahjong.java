@@ -5,15 +5,14 @@ import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Ex0727 {
+public class mahjong {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
 		Random ran = new Random();
 		
 		String[] num = new String[34];
-		String[] mahjong = new String[13];
+		String[] mahjong = new String[14];
 		String dummy;
 		
 		for(int i = 0; i<num.length-25; i++) {
@@ -34,8 +33,8 @@ public class Ex0727 {
 		num[32] = "|發|";
 		num[33] = "|中|";
 		
-		for(int i = 0; i<13; i++) {
-			mahjong[i] = num[ran.nextInt(33)];
+		for(int i = 0; i<14; i++) {
+			mahjong[i] = num[ran.nextInt(34)];
 			
 		}
 		
@@ -57,7 +56,7 @@ public class Ex0727 {
 		
 		
 		
-		for(int i = 0; i<13; i++) {
+		for(int i = 0; i<14; i++) {
 			Arrays.sort(mahjong);
 			System.out.print(mahjong[i]);
 
