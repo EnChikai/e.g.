@@ -14,7 +14,7 @@ public class CircleCalculator {
 		
 		System.out.println("- - - - 원의 넓이 계산기 - - - -");
 		System.out.println("기입하고자 하는 값을 선택하세요.");
-		System.out.println("[1. 지름], [2. 반지름]");
+		System.out.println("[1. 지름], [2. 반지름], [0. 종료]");
 			
 		for(int i=0; i<1; i++) {
 				
@@ -32,9 +32,12 @@ public class CircleCalculator {
 					try {
 						System.out.print(" >> ");
 						ca.diameter(sc.nextDouble());
-							
-						System.out.printf("넓이는 : " + "%.2f",ca.getResult() + "입니다.");
-							
+						
+						System.out.println();
+						System.out.print("넓이는 : ");
+						System.out.printf("%.2f",ca.getResult());
+						System.out.println(" 입니다.");
+						
 					}catch(InputMismatchException e) {
 						System.err.println("\n잘못된 입력입니다. 재입력 해주세요.");
 						sc.nextLine();
@@ -51,8 +54,11 @@ public class CircleCalculator {
 					try {
 						System.out.print(" >> ");
 						ca.radius(sc.nextDouble());
-							
-						System.out.printf("넓이는 : " + "%.2f",ca.getResult() + "입니다.");
+						
+						System.out.println();
+						System.out.print("넓이는 : ");
+						System.out.printf("%.2f",ca.getResult());
+						System.out.println(" 입니다.");
 							
 					}catch(InputMismatchException e) {
 						System.err.println("\n잘못된 입력입니다. 재입력 해주세요.");
@@ -60,11 +66,16 @@ public class CircleCalculator {
 						j--;
 					}
 				}
+			}else if(select.equals("0") || select.equals("종료") || select.equals("0. 종료")) {
+				break;
+				
 			}else {
 				System.err.println("\n잘못된 입력입니다. 재입력 해주세요.");
 				i--;
 			}
 		}
+		System.out.println("종료합니다.");
 		sc.close();
 	}
 }
+
