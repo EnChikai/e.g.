@@ -18,3 +18,6 @@ FileNotFoundException
   
 IOexcption
  - I/O 오류가 발생하는 경우에 throw되는 예외
+ 
+InputMismatchException
+ - Scanner를 사용한 입력값이 변수값과 매치가 안될때 발생
