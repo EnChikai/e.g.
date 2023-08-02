@@ -5,8 +5,6 @@ import java.util.Random;
 
 public class Shuffle {
 	
-	int masterTiles;
-			
 	public void mahjongShuffle() {
 		
 /*
@@ -42,7 +40,6 @@ public class Shuffle {
 		for(int i = 0; i<mahjong.length; i++) {
 			Arrays.sort(mahjong);
 			dummy = mahjong[i]; 
-			masterTiles = mahjong[i];
 			tiles.setNum(dummy);
 			tiles.mahjongTiles();
 
