@@ -9,12 +9,12 @@ import javax.swing.SwingConstants;
 
 class ImgLoad extends JFrame{
 	
-	static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;
 	JLabel label;
 	
 	public ImgLoad() {
-		super("test용");
+		
+		super("Image Test용");
 		setLayout(new FlowLayout());
 		
 		Icon img = new ImageIcon(getClass().getResource("img.png"));
@@ -23,3 +23,4 @@ class ImgLoad extends JFrame{
 		
 	}
 }
+
