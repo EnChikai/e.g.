@@ -1,5 +1,7 @@
 package blogex.mahjong;
 
+import java.io.File;
+
 public class Tiles {
 
 	private int num;
@@ -12,6 +14,7 @@ public class Tiles {
 	
 	public void mahjongTiles() {
 		//마작패
+		
 		switch(num) {
 		case 0: System.out.print("(１)");
 				break;

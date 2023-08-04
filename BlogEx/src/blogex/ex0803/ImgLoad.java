@@ -18,7 +18,7 @@ class ImgLoad extends JFrame{
 		setLayout(new FlowLayout());
 		
 		Icon img = new ImageIcon(getClass().getResource("img.png"));
-		label = new JLabel("",img,SwingConstants.LEFT);
+		label = new JLabel("",img,SwingConstants.CENTER);
 		add(label);
 		
 	}
