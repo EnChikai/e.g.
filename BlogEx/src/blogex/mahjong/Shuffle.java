@@ -3,6 +3,8 @@ package blogex.mahjong;
 import java.util.Arrays;
 import java.util.Random;
 
+import javax.swing.JFrame;
+
 public class Shuffle {
 	
 	public void mahjongShuffle() {
@@ -23,8 +25,9 @@ public class Shuffle {
 		Tiles tiles = new Tiles();
 		Random ran = new Random();
 		
-		int[] num = new int[34];
+		
 		int[] mahjong = new int[14];
+		int[] num = new int[34];
 		int dummy;
 		
 		for(int i = 0; i<num.length; i++) {
@@ -34,17 +37,21 @@ public class Shuffle {
 		
 		for(int i = 0; i<14; i++) {
 			mahjong[i] = num[ran.nextInt(34)];
-			
 		}
-		
+
 		for(int i = 0; i<mahjong.length; i++) {
 			Arrays.sort(mahjong);
 			dummy = mahjong[i]; 
 			tiles.setNum(dummy);
 			tiles.mahjongTiles();
-
+			
 		}
 		
+		TransImage imgload = new TransImage(10);
+		imgload.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		imgload.setSize(1250,185);
+		imgload.setVisible(true);
+		
 	}
-	
+
 }

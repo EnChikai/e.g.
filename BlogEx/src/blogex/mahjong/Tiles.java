@@ -1,7 +1,5 @@
 package blogex.mahjong;
 
-import java.io.File;
-
 public class Tiles {
 
 	private int num;

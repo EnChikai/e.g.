@@ -11,6 +11,7 @@ public class Mahjong {
 		shuffle.mahjongShuffle();
 		System.out.print("");
 		
+		
 	}
 
 }
