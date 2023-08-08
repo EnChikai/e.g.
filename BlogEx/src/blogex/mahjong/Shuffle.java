@@ -3,12 +3,13 @@ package blogex.mahjong;
 import java.util.Arrays;
 import java.util.Random;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
-public class Shuffle {
-	
-	public void mahjongShuffle() {
-		
+public class Shuffle{
 /*
 
 0 = (1)		 9 = {1}	18 = [1]	27 = |東|
@@ -21,14 +22,20 @@ public class Shuffle {
 7 = (8)		16 = {8}	25 = [8]	 
 8 = (9)		17 = {9}	26 = [9]	 
 
- */
+*/
+	int dummy;
+	
+	public void mahjongShuffle() {
+		JFrame frame = new JFrame();
+		frame.setTitle("First Open");
+		JLabel label = new JLabel();
+		
 		Tiles tiles = new Tiles();
 		Random ran = new Random();
 		
-		
 		int[] mahjong = new int[14];
 		int[] num = new int[34];
-		int dummy;
+		
 		
 		for(int i = 0; i<num.length; i++) {
 			num[i] = i;
@@ -44,14 +51,26 @@ public class Shuffle {
 			dummy = mahjong[i]; 
 			tiles.setNum(dummy);
 			tiles.mahjongTiles();
-			
 		}
 		
-		TransImage imgload = new TransImage(10);
-		imgload.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		imgload.setSize(1250,185);
-		imgload.setVisible(true);
+		for(int i =0; i<14; i++){
+			int[] random = new int[14];
+			random[i] = this.dummy;
+			
+			System.out.print(random[i]+" ");
+			
+			Icon image = new ImageIcon(getClass().getResource("./tiles/"+random[i]+".png"));
+						label = new JLabel("",image,SwingConstants.CENTER);
+						frame.getContentPane().add(label);
+						break;
+			}
+		
+		frame.setSize(1250,185);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
 		
 	}
+	
 
 }
