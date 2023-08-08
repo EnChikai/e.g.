@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 
 public class FirstFrame  {
 	
-	public static void main(String[] args) {
+	public void screen(){
 	
 		JFrame frame = new JFrame();
 		
@@ -26,3 +26,4 @@ public class FirstFrame  {
 		
 	}
 }
+
