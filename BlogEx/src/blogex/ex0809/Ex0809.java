@@ -11,6 +11,41 @@ import javax.swing.JFrame;
 public class Ex0809 {
 
 	public static void main(String[] args) {
+
+/*
+  
+1. 	JFrame, JButton[], Scanner사용하며 Scanner로 버튼 갯수를 대입받으면
+ 	그 수만큼 프레임에 표시되도록 프로그래밍하시오.
+ 	
+
+보기 :
+  
+Console:
+
+버튼 갯수를 입력하세요
+ >>   
+  
+==========================================
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  		
+ */
 		
 		JFrame frame = new JFrame();
 		JButton[] button = null;
