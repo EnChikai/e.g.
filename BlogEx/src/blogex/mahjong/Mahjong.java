@@ -1,7 +1,5 @@
 package blogex.mahjong;
 
-import javax.swing.JFrame;
-
 public class Mahjong {
 
 	public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package blogex.mahjong;
 
+import java.awt.Color;
+import java.awt.FlowLayout;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -24,18 +26,17 @@ public class Shuffle{
 
 */
 	int dummy;
+	JLabel label;
 	
 	public void mahjongShuffle() {
 		JFrame frame = new JFrame();
-		frame.setTitle("First Open");
-		JLabel label = new JLabel();
+		frame.setTitle("마작!");
 		
 		Tiles tiles = new Tiles();
 		Random ran = new Random();
 		
 		int[] mahjong = new int[14];
 		int[] num = new int[34];
-		
 		
 		for(int i = 0; i<num.length; i++) {
 			num[i] = i;
@@ -51,25 +52,23 @@ public class Shuffle{
 			dummy = mahjong[i]; 
 			tiles.setNum(dummy);
 			tiles.mahjongTiles();
+			
+			System.out.print(mahjong[i]+" ");
+			
+			frame.setLayout(new FlowLayout(FlowLayout.CENTER,0,15));		
+			Icon image = new ImageIcon(getClass().getResource("./tiles/" + mahjong[i] + ".png"));
+			label = new JLabel("",image,SwingConstants.CENTER);
+			frame.add(label);
+			
+			
 		}
 		
-		for(int i =0; i<14; i++){
-			int[] random = new int[14];
-			random[i] = this.dummy;
-			
-			System.out.print(random[i]+" ");
-			
-			Icon image = new ImageIcon(getClass().getResource("./tiles/"+random[i]+".png"));
-						label = new JLabel("",image,SwingConstants.CENTER);
-						frame.getContentPane().add(label);
-						break;
-			}
-		
-		frame.setSize(1250,185);
+		frame.setSize(1250,200);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
+		frame.getContentPane().setBackground(new Color(56,88,147));
+
 	}
 	
 
