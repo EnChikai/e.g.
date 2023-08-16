@@ -3,7 +3,7 @@ package blogex;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class EX814_2 {
+public class EX0814_2 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
