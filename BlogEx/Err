@@ -21,3 +21,6 @@ IOexcption
  
 InputMismatchException
  - Scanner를 사용한 입력값이 변수값과 매치가 안될때 발생
+ 
+IllegalFormatConversionException
+ - "%,d" 사용할때 String.format을 적용하지 않아 발생 
