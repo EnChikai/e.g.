@@ -5,7 +5,7 @@ package blogex;
 
 import java.util.Scanner;
 
-public class EX0703 {
+public class Ex0703 {
 
 	public static void main(String[] args) {
 

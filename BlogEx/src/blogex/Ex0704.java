@@ -3,7 +3,7 @@
 
 package blogex;
 
-public class EX0704 {
+public class Ex0704 {
 
 	public static void main(String[] args) {
 

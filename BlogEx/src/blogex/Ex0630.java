@@ -5,7 +5,7 @@ package blogex;
 
 import java.util.Scanner;
 
-public class EX0630 {
+public class Ex0630 {
 	public static void main(String[] args) {
 /*
 1.	[Scanner, if(else관련 포함), for] 해당부분을 포함하여 짝수를 기입시 1을 9번 빼고,
