@@ -37,23 +37,14 @@ public class Ex0828 {
 		
 		for(int i = 0; i<group.length; i++) {
 			
-			int num = ran.nextInt(33);
-			
-			int[] dummy = null;
-			
-			// 중복 3회 허용
-			for(int j = 0; j<0; j++) {
-				
-			}
-			
+			int num = ran.nextInt(group.length);
 			group[i] = num;
-			
 		}
 		
 		Arrays.sort(group);	
 		System.out.println(Arrays.toString(group));
 		
 		sc.close();
-		
 	}
 }
+

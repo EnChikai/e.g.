@@ -56,7 +56,7 @@ public class Ex0825 {
 		
 		for(int i = 0; i<group.length; i++) {
 			
-			int num = ran.nextInt(33);
+			int num = ran.nextInt(group.length);
 			group[i] = num;
 		}
 		
