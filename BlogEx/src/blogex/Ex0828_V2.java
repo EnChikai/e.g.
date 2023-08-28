@@ -1,11 +1,13 @@
 package blogex;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Ex0828 {
+public class Ex0828_V2 {
 
 	public static void main(String[] args) {
 		
@@ -33,12 +35,30 @@ public class Ex0828 {
 			}
 		}
 		
+
+		Map<String, String> map = new HashMap<String, String> ();
+
 		Random ran = new Random();
-		
+
 		for(int i = 0; i<group.length; i++) {
-			
 			int num = ran.nextInt(group.length);
+
+			if(map.containsKey(String.valueOf(num))) {
+				if(Integer.parseInt(map.get(String.valueOf(num))) >= 3) {
+					i--;
+					continue;
+				}else {
+					map.put(String.valueOf(num), String.valueOf( 1+Integer.parseInt(map.get(String.valueOf(num)))));
+					group[i] = num;
+
+				}
+			}else {
+				map.put(String.valueOf(num), String.valueOf(1));
+				group[i] = num;
+
+			}
 			group[i] = num;
+
 		}
 		
 		Arrays.sort(group);	
@@ -47,3 +67,4 @@ public class Ex0828 {
 		sc.close();
 	}
 }
+
