@@ -1,48 +1,86 @@
 package blogex;
 
-import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Ex0828 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		int input = 0;
-		int[] group = null;
-		System.out.println("양수를 입력하시오");
-		System.out.println("(\"0\"입력시 빈 배열)");
-	
-		for(int i = 0; i<1; i++) {
+
+		int xVer = 0;
+		int yVer = 0;
+		int result = 0;
+		int multiply = 0;
+		int vertex = 0;
+		int[][] coordinate = null;
+
+		System.out.println("꼭지점의 갯수를 입력해주세요");
+		for (int i = 0; i < 1; i++) {
 			try {
 				System.out.print(" >> ");
-				input = sc.nextInt();
-				group =  new int[input]; 
-				
-			}catch (InputMismatchException e) {
-				System.err.println("[ERROR]숫자를 입력 바랍니다.");
-				sc.nextLine();
+				vertex = sc.nextInt();
+				if (vertex < 0) {
+
+					System.err.println("잘못된 입력입니다. 재입력 바랍니다.");
+					i--;
+					sc.nextLine();
+
+				} else if (vertex > 0) {
+
+					coordinate = new int[vertex + 1][2];
+
+					for (int j = 0; j < vertex; j++) {
+						try {
+							System.out.println((j + 1) + "번째 \"X\" 값을 입력해주세요");
+							xVer = sc.nextInt();
+							coordinate[j][0] = xVer;
+
+							System.out.println((j + 1) + "번째 \"Y\" 값을 입력해주세요");
+							yVer = sc.nextInt();
+							coordinate[j][1] = yVer;
+
+							if (j == vertex - 1) {
+								coordinate[vertex][0] = coordinate[0][0];
+								coordinate[vertex][1] = coordinate[0][1];
+							}
+						} catch (InputMismatchException e) {
+							System.err.println("잘못된 입력입니다. 재입력 바랍니다.");
+							j--;
+							sc.nextLine();
+						}
+					}
+
+					for (int j = 0; j < vertex; j++) {
+						multiply += coordinate[j][0] * coordinate[j + 1][1];
+					}
+
+					result += Math.abs(multiply);
+
+					multiply = 0;
+					for (int j = 0; j < vertex; j++) {
+						multiply += coordinate[j][1] * coordinate[j + 1][0];
+					}
+
+					result += Math.abs(multiply);
+
+					System.out.println(vertex + "각형의 넓이는");
+					System.out.print(result / 2);
+
+				} else {
+
+					System.out.println("시스템을 종료합니다");
+					break;
+
+				}
+
+			} catch (InputMismatchException e) {
+				System.err.println("잘못된 입력입니다. 재입력 바랍니다.");
 				i--;
-				
-			}catch (NegativeArraySizeException e) {
-				System.err.println("[ERROR]양수를 바랍니다.");
 				sc.nextLine();
-				i--;
 			}
 		}
-		
-		Random ran = new Random();
-		
-		for(int i = 0; i<group.length; i++) {
-			
-			int num = ran.nextInt(group.length);
-			group[i] = num;
-		}
-		
-		Arrays.sort(group);	
-		System.out.println(Arrays.toString(group));
 		
 		sc.close();
 	}
