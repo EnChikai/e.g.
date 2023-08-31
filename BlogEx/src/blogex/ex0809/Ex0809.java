@@ -74,11 +74,11 @@ Console:
 		
 		frame.setSize(360, 280);
 		frame.setTitle("First Open");
-		frame.setVisible(true);
 		frame.getContentPane().setBackground(Color.white);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
-	
+		frame.setVisible(true);
+		
 		sc.close();
 	}
 	
