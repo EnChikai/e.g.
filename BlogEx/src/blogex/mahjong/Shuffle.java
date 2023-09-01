@@ -2,11 +2,14 @@ package blogex.mahjong;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -33,21 +36,51 @@ public class Shuffle{
 		frame.setTitle("마작!");
 		
 		Tiles tiles = new Tiles();
-		Random ran = new Random();
+//		Random ran = new Random();
 		
 		int[] mahjong = new int[14];
-		int[] num = new int[34];
+		int[] tNum = new int[34];
 		
-		for(int i = 0; i<num.length; i++) {
-			num[i] = i;
-		}
+//		for(int i = 0; i<num.length; i++) {
+//			num[i] = i;
+//		}
+//		
+//		
+//		for(int i = 0; i<14; i++) {
+//			mahjong[i] = num[ran.nextInt(34)];
+//		}
+//
 		
-		
-		for(int i = 0; i<14; i++) {
-			mahjong[i] = num[ran.nextInt(34)];
-		}
+		Map<String, String> map = new HashMap<String, String> ();
+
+		Random ran = new Random();
 
 		for(int i = 0; i<mahjong.length; i++) {
+			int num = ran.nextInt(tNum.length);
+
+			if(map.containsKey(String.valueOf(num))) {
+				if(Integer.parseInt(map.get(String.valueOf(num))) >= 3) {
+					i--;
+					continue;
+				}else {
+					map.put(String.valueOf(num), String.valueOf( 1+Integer.parseInt(map.get(String.valueOf(num)))));
+					mahjong[i] = num;
+
+				}
+			}else {
+				map.put(String.valueOf(num), String.valueOf(1));
+				mahjong[i] = num;
+
+			}
+			mahjong[i] = num;
+
+		}
+		
+		
+		
+		
+		for(int i = 0; i<mahjong.length; i++) {
+			
 			Arrays.sort(mahjong);
 			dummy = mahjong[i]; 
 			tiles.setNum(dummy);
@@ -56,18 +89,33 @@ public class Shuffle{
 			System.out.print(mahjong[i]+" ");
 			
 			frame.setLayout(new FlowLayout(FlowLayout.CENTER,0,15));		
-			Icon image = new ImageIcon(getClass().getResource("./tiles/" + mahjong[i] + ".png"));
-			label = new JLabel("",image,SwingConstants.CENTER);
+			ImageIcon image = new ImageIcon(getClass().getResource("./tiles/" + mahjong[i] + ".png"));
+			Image img = image.getImage();
+			img.getScaledInstance(40, 65, Image.SCALE_SMOOTH);
+			ImageIcon changeIcon = new ImageIcon(img);
+			
+			label = new JLabel("",changeIcon,SwingConstants.CENTER);
 			frame.add(label);
 			
 			
 		}
+		System.out.println();
+		JButton button = new JButton("한 번 더!");
+		button.setBounds(100,10,100,25);
+		frame.getContentPane().add(button);
 		
-		frame.setSize(1250,200);
+		frame.setSize(1250,300);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.getContentPane().setBackground(new Color(56,88,147));
+		
+		button.addActionListener(event -> {
+			
+			frame.setVisible(false);
+			mahjongShuffle();
+			
+		});
 
 	}
 	
