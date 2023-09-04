@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class Shuffle{
@@ -28,10 +29,13 @@ public class Shuffle{
 8 = (9)		17 = {9}	26 = [9]	 
 
 */
-	int dummy;
-	JLabel label;
+
+	int one = 0;
 	
 	public void mahjongShuffle() {
+		int dummy;
+		JLabel label;
+		
 		JFrame frame = new JFrame();
 		frame.setTitle("마작!");
 		
@@ -76,9 +80,6 @@ public class Shuffle{
 
 		}
 		
-		
-		
-		
 		for(int i = 0; i<mahjong.length; i++) {
 			
 			Arrays.sort(mahjong);
@@ -94,26 +95,29 @@ public class Shuffle{
 			img.getScaledInstance(40, 65, Image.SCALE_SMOOTH);
 			ImageIcon changeIcon = new ImageIcon(img);
 			
-			label = new JLabel("",changeIcon,SwingConstants.CENTER);
+			label = new JLabel(changeIcon,SwingConstants.CENTER);
 			frame.add(label);
-			
-			
 		}
+		
 		System.out.println();
 		JButton button = new JButton("한 번 더!");
 		button.setBounds(100,10,100,25);
 		frame.getContentPane().add(button);
 		
-		frame.setSize(1250,300);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		frame.getContentPane().setBackground(new Color(56,88,147));
+		if(this.one == 0) {
+			frame.setSize(1200,240);
+			frame.setLocationRelativeTo(null);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
+			frame.getContentPane().setBackground(new Color(56,88,147));
+			
+		}
+		
 		
 		button.addActionListener(event -> {
-			
 			frame.setVisible(false);
 			mahjongShuffle();
+			
 			
 		});
 
