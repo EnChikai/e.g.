@@ -104,15 +104,16 @@ public class Shuffle{
 		button.setBounds(100,10,100,25);
 		frame.getContentPane().add(button);
 		
+		frame.setSize(1200,240);
+		frame.getContentPane().setBackground(new Color(56,88,147));
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
+		
 		if(this.one == 0) {
-			frame.setSize(1200,240);
-			frame.setLocationRelativeTo(null);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setVisible(true);
-			frame.getContentPane().setBackground(new Color(56,88,147));
-			
 		}
 		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		button.addActionListener(event -> {
 			frame.setVisible(false);
