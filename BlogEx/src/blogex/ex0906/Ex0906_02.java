@@ -65,7 +65,7 @@ public class Ex0906_02 extends JFrame implements KeyListener {
 
 			}
 			
-		repaint(); // 한번 실행하면 다시 원래 이미지로 복귀
+		repaint();
 	}
 	
 	@Override
