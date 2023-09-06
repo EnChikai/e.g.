@@ -8,11 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class Ex0905_2 extends JFrame {
+public class Ex0905_02 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	public Ex0905_2() {
+	public Ex0905_02() {
 		super("Image Test용");
 		JLabel label;
 		setLayout(new FlowLayout());

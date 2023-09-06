@@ -1,8 +1,8 @@
-package blogex.ex0905;
+package blogex.ex0906;
 
 import javax.swing.JFrame;
 
-public class Ex0905_01 {
+public class Ex0906_01 {
 
 	public static void main(String[] args) {
 /*
@@ -11,9 +11,9 @@ public class Ex0905_01 {
 	extends JFrame를 적용후 별도의 클래스에서 함수로서 이를 출력하시오
 	(단, 창 크기는 변경 불가능하게 하시오)	
 */
-		JFrame frame = new Ex0905_02();
+		System.out.println();
+		JFrame frame = new Ex0906_02();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(405,340);;
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 
