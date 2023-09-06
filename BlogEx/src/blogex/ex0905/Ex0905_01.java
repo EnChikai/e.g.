@@ -13,7 +13,7 @@ public class Ex0905_01 {
 */
 		JFrame frame = new Ex0905_02();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(405,340);;
+		frame.setSize(405,340);
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 

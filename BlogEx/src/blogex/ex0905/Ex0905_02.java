@@ -25,3 +25,4 @@ public class Ex0905_02 extends JFrame {
 	}
 
 }
+

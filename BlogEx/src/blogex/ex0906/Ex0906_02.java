@@ -51,16 +51,16 @@ public class Ex0906_02 extends JFrame implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
-			if(key == e.VK_RIGHT ) {
+			if(key == KeyEvent.VK_RIGHT ) {
 				x = (x < getWidth()) ? x + i : -image.getWidth(this);
 
-			}else if(key == e.VK_LEFT ) {
+			}else if(key == KeyEvent.VK_LEFT ) {
 				x = (x > 0) ? x - i :getWidth() + image.getWidth(this);
 				 
-			}else if(key == e.VK_UP ) {
+			}else if(key == KeyEvent.VK_UP ) {
 				y = (y > 0) ? y - i : getHeight() + image.getHeight(this);
 				 
-			}else if(key == e.VK_DOWN ) {
+			}else if(key == KeyEvent.VK_DOWN ) {
 				y = (y < getHeight()) ? y + i : -image.getHeight(this);
 
 			}
@@ -71,5 +71,5 @@ public class Ex0906_02 extends JFrame implements KeyListener {
 	@Override
 	public void keyReleased(KeyEvent e) {}
 	
-	
 }
+
