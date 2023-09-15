@@ -55,7 +55,6 @@ public class Ex0914 {
 업로드 날짜 : 2023-09-15 	
  */
 		Scanner sc = new Scanner(System.in);
-		
 		int year = 0;
 		int month = 0;
 		int day = 0;
@@ -89,6 +88,8 @@ public class Ex0914 {
 				System.out.println();
 				i--;
 				sc.nextLine();
+			} finally {
+				sc.close();
 			}
 		}
 		
@@ -111,7 +112,6 @@ public class Ex0914 {
 		}else {
 			System.out.println("업로드 시간 : "+new SimpleDateFormat("HH:mm").format(bSomeday));
 		}
-		
-		sc.close();
 	}
 }
+
