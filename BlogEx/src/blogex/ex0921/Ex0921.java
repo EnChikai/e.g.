@@ -1,6 +1,6 @@
-package blogex.ex0920;
+package blogex.ex0921;
 
-public class Ex0920 {
+public class Ex0921 {
 
 	public static void main(String[] args) {
 

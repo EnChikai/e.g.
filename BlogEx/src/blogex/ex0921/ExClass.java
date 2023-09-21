@@ -1,4 +1,4 @@
-package blogex.ex0920;
+package blogex.ex0921;
 
 public class ExClass {
 
