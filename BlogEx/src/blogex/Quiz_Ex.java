@@ -10,10 +10,12 @@ public class Quiz_Ex {
 		Quiz t1 = new Quiz();
 		
 		System.out.println("t2 값 입력 : ");
-		String t2 = new Quiz().str1(sc.nextLine());
+		Quiz t2 = new Quiz();
+		t2.setA(sc.nextLine());
 		
 		System.out.println("t3 값 입력 : ");
-		String t3 = new Quiz().str2(sc.nextLine());
+		Quiz t3 = new Quiz();
+		t3.setB(sc.nextLine());
 		
 		System.out.println(t1.method(t2,t3));
 		
